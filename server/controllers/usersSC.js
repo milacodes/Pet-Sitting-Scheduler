@@ -30,10 +30,23 @@ module.exports = (function(){
 				}, {password:0, created_at:0, updated_at:0}, function(err, admin){
 				if(admin){
 					console.log(admin);
-					res.json(admin);
+					req.session.user_id = admin._id;
+					req.session.username = admin.username;
+
+					req.session.save(function(err){
+						console.log("ADMIN SAVE: ", req.session)
+						res.json(admin);
+					});
 				}
+
 				else{
-					res.json(false);
+					if(err){
+						res.json(err);
+						console.log(err);
+					}
+					else{
+						res.json(false);
+					}
 				}
 			})
 		},
@@ -56,7 +69,7 @@ module.exports = (function(){
 						console.log("SESSION", sesh, "@@@@@");
 
 						req.session.save(function(err){
-							console.log("AFTER SAVE: ", req.session)
+							console.log("USER SAVE: ", req.session)
 							res.json(user);
 						});
 					}
