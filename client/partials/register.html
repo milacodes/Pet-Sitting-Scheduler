@@ -1,0 +1,132 @@
+<style type="text/css">
+    .reg{
+        background: rgba(0, 0, 255, .6);
+        color: lavender;
+    }
+
+    legend{
+        color: thistle;
+    }
+
+    .help-block{
+        color: lavender
+    }
+
+    table{
+      color:black;
+    }
+
+    .table{
+        color: black;
+        border: 2px solid darkslategray;
+    }
+    
+    .table thead{
+        background-color: lightslategray;
+    }
+   
+</style>
+
+<div class = "container">
+    <div class = "reg jumbotron">
+	    <div class = "container-fluid">
+	   	   <h1>Mila's Pet Sittin' Shop</h1>
+	   	   <h2>Register below</h2>	    
+        </div>
+	    <form class = "container-fluid" role="form" name = "regform">
+	   	   <legend>About you</legend>
+ 	  	   <div class="form-group">
+            		<label for="name">Full name:</label>
+            		<input type="text" class="form-control" id="name" ng-model = "newUser.name" required>
+                    <span ng-show = "regform.name.$dirty && regform.name.$error.required">Full name Required</span>
+  	 	   </div>
+
+  	 	   <div class="form-group">
+            		<label for="username">Username:</label>
+            		<input type="text" class="form-control" id="username" ng-model = "newUser.username" required>
+                    <span ng-show = "regform.username.$dirty && regform.username.$error.required">Username Required</span>
+  	 	   </div>
+
+  	 	   <div class="form-group">
+            		<label for="email">Email address:</label>
+            		<input type="email" class="form-control" id="email" ng-model = "newUser.email" required>
+                    <span ng-show = "regform.email.$dirty && regform.email.$error.required">Email Required</span>
+  	 	   </div>
+
+ 	  	   <div class="form-group">
+            		<label for="password">Password:</label>
+            		<input type="password" class="form-control" id="password" ng-model = "newUser.password" required>
+                    <span ng-show = "regform.password.$dirty && regform.password.$error.required">Password Required</span>
+  	 	   </div>
+  	 	   
+        
+  	 	   <legend>Address</legend>
+  	 	   <div class="form-group">
+            		<label for="addy1">Address Line 1:</label>
+            		<input type="text" class="form-control" id="addy1" ng-model = "newUser.address.addy1" required>
+            		<p class = "help-block">Street address, P.O Box</p>
+                    <span ng-show = "regform.addy1.$dirty && regform.addy1.$error.required">Address Line 1 Required</span>
+  	 	   </div>
+
+  	 	   <div class="form-group">
+            		<label for="addy2">Address Line 2:</label>
+            		<input type="text" class="form-control" id="addy2" ng-model = "newUser.address.addy2">
+            		<p class = "help-block">Apartment, suite, unit, etc.</p>
+  	 	   </div>
+
+  	 	   <div class="form-group">
+            		<label for="city">City/Town</label>
+            		<input type="text" class="form-control" id="city" ng-model = "newUser.address.city" required>
+                    <span ng-show = "regform.city.$dirty && regform.city.$error.required">City Required</span>
+  	 	   </div>
+
+  	 	   <div class="form-group">
+            		<label for="state">State</label>
+            		<input type="text" class="form-control" id="state" ng-model = "newUser.address.state" required>
+                    <span ng-show = "regform.state.$dirty && regform.state.$error.required">State Required</span>
+  	 	   </div>
+
+  	 	   <div class="form-group">
+            		<label for="zip">Zip Code</label>
+            		<input type="text" class="form-control" id="zip" ng-model = "newUser.address.zip" required>
+                    <span ng-show = "regform.zip.$dirty && regform.zip.$error.required">Zipcode Required</span>
+  	 	   </div>
+        
+  	 	   <legend>About your pets</legend>
+           <p>Add all of your animals here.</p>
+                <table class = "table">​
+                    <thead>​
+                            <th>Pet Name</th>​
+                            <th>Pet Type</th>​
+                    </thead>​
+                    <tbody>​
+                        <tr class="success" ng-repeat= "animal in animals">​
+                            <td ng-bind = "animal.name" ></td>​
+                            <td ng-bind = "animal.species" ></td>​
+                        </tr>​
+                    </tbody>​
+                </table>​
+                <div class="form-group">
+                    <label for="animalname">Pet Name:</label>
+                    <input type="text" class="form-control" id="animalname" ng-model = "animal.name">
+                </div>
+              	<div class="form-group">
+                    <label for="animaltype">What type of animal?</label>
+                    <select class="form-control" id="animaltype" ng-model = "animal.species">
+                        <option>Dog</option>
+                        <option>Cat</option>
+                        <option>Fish</option>
+                        <option>Bird</option>
+                        <option>Rabbit</option>
+                        <option>Ferret</option>
+                        <option>Lizard</option>
+                        <option disabled>Snake</option>
+                    </select>
+                </div>
+
+                <input type = "submit" class = "btn btn-info" value = "Add Your Animal" ng-click="addAnimal(animal)"><hr>
+        
+	   	   <input type = "submit" class = "btn btn-success" value = "Register and Log In" ng-disabled = "regform.$invalid" ng-click = "addUser(newUser)">
+	    </form>
+    </div>
+</div>	

@@ -1,0 +1,80 @@
+<!DOCTYPE html>​
+​<html lang="en" ng-app= "sitapp">​
+​<head>​
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Mila's Pet Sittin' Shop</title>​
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="datetimepicker/jquery.datetimepicker.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/css/style.css">
+
+    <!-- jquery -->
+    <script src='fullcalendar-2.4.0/lib/jquery.min.js'></script>
+
+    <!-- angular stuff -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.js"></script>
+
+
+    <!-- full calendar stuff -->
+    <link rel='stylesheet' href='fullcalendar-2.4.0/fullcalendar.css'/>
+    <script src='fullcalendar-2.4.0/lib/moment.min.js'></script>
+    <script src='fullcalendar-2.4.0/fullcalendar.js'></script>
+
+    <!-- datetimepicker jquery plugin -->
+    <script src='datetimepicker/build/jquery.datetimepicker.full.min.js'></script>
+
+
+    <!-- routes/controllers/factories -->
+    <script src = "/js/app.js"></script>
+
+    <script src = "js/factories/userF.js"></script>
+    <script src = "js/factories/apptF.js"></script>
+    <script src = "js/controllers/usersC.js"></script>
+    <script src = "js/controllers/authC.js"></script>
+    <script src = "js/controllers/datetimesC.js"></script>
+    <script src = "js/controllers/calC.js"></script>
+    <script src = "js/controllers/apptsC.js"></script>
+
+    <script type="text/javascript">
+  
+    </script>
+​</head>​
+
+​<body ng-controller = "usersController">​
+<div class = "imgcontainer">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#/home" class="navbar-brand"> Mila's Pet Sittin' Shop </a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav">
+                    <li class=""> <a href="#/rates">Rates</a> </li>
+                    <li class="divider-vertical"></li>
+                    <li class=""> <a href="#/calendar">Calendar</a> </li>
+                    <li class="divider-vertical"></li>
+                    <li class=""> <a href="#/request">Request Dates</a> </li>
+                    <li class="divider-vertical"></li>
+                    <li class=""> <a href="#/cancel">Cancel Dates</a> </li>
+                 </ul>
+                 <ul class="nav navbar-nav navbar-right">
+                    <li class=""> <a href="" ng-click = "logout()">Log Out</a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </nav>
+
+
+                <div ng-view = ""></div>
+
+	
+</div>	
+​</body>​
+​</html>​
+​

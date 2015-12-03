@@ -1,0 +1,44 @@
+<style type="text/css">
+    .admin{
+        background: rgba(199, 21, 133, .6);
+        color: azure;
+    }
+
+    .erra{
+        color: azure;
+    }
+   
+</style>
+<div class = "container">
+	<div class = "admin jumbotron">
+		<h1>Mila's Pet Sittin' Shop Admin Login<br></h1>
+
+		<form name = 'logform' class = "container-fluid" role="form">
+	 		<div class="form-group">
+	    		<label for="username">Username:</label>
+	
+	    		<div>
+	    		<input type="text" class="form-control" name="username" ng-model = "adlogin.username" required>
+	    		<span ng-show = "logform.username.$dirty && logform.username.$error.required">Username Required</span>
+	    		</div>
+	
+	  		</div>
+	
+	 		<div class="form-group">
+	    		<label for="password">Password:</label>
+	
+	    		<div>
+	    		<input type="password" class="form-control" name="password" ng-model = "adlogin.password" required>
+	    		<span ng-show = "logform.password.$dirty && logform.password.$error.required">Password Required</span>
+	    		</div>
+	
+	  		</div>
+
+	
+			<input type = "submit" class = "btn btn-success" value = "Log In" ng-disabled = "logform.$invalid" ng-click = "	adminlogin(adlogin)">
+		</form>
+
+		<h5 class = "erra" ng-bind = "aderror"></h5>
+
+	</div>
+</div>

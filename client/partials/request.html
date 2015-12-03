@@ -1,0 +1,50 @@
+
+
+<style type="text/css">
+    .req{
+        background: rgba(0, 127, 255, .7);
+        color: white;
+    }
+    .dates{
+        
+        margin-left: 0px;
+        /*outline: 2px solid red;*/
+        text-align: center;
+    }
+    .errz{
+        color: #b22222;
+    }
+   
+</style>
+
+	<div class = "container">
+        <div class = "req jumbotron">
+		    <h1>Request a time for me to house sit!</h1>
+            <h3>Just enter the start and end dates and times, and I'll contact you to confirm!</h3>
+            <form role = "form" name = "requestform">​
+                <div class = "dates row">
+                    <div class = "form-group">
+                        <p>Start Date and Time:</p>
+                        <input id = "datetimepicker_start" type = "text" ng-model = "appt.start" required>
+                    </div>
+            
+                    <div class = "form-group">
+                        <p>End Date and Time:</p>
+                        <input id = "datetimepicker_end" type = "text" ng-model = "appt.end" required>
+                    </div>
+                </div>
+        
+                <div class = "form-group">
+                    <p>Any extra info I should know?</p>
+                    <textarea class="form-control" id="info" ng-model = "appt.info"></textarea>
+                </div>
+                
+                <input type = "submit" value = "Send Appointment Request" class = "btn btn-success" ng-disabled = "requestform.$invalid" ng-click = "sendRequest(appt)">
+            </form>​
+            
+            <p class = "errz" ng-bind = "datetimeerror"></p>
+            <hr>
+    
+            <a href="#/cancel" class = "btn btn-warning">Need to cancel?</a>
+        </div>        
+	</div>

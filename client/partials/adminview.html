@@ -1,0 +1,55 @@
+<style type="text/css">
+    .adview{
+        background: rgba(30, 144, 255, .8);
+        color: darkslategray;
+    }
+
+    .table{
+        color: black;
+        border: 2px solid darkslategray;
+    }
+    .table thead{
+        background-color: lightslategray;
+    }
+
+    .cal{
+        background-color: white;
+        opacity: .95;
+        margin-bottom: 40px;
+        border: 3px solid darkslategray;
+
+    }
+</style>
+
+<div class = "container">
+    <div class = "adview jumbotron">
+        <h1>Requested Dates</h1>​
+        <p>Search<input type="text" ng-model="query"></p>
+        
+        <table class = "table">​
+            <thead>​
+                    <th>Name</th>​
+                    <th>Start</th>​
+                    <th>End</th>​
+                    <th>Extra Info</th>​
+                    <th>Action</th>
+            </thead>​
+            <tbody>​
+                <tr class="info" ng-repeat= "appt in appts | filter: query | orderBy: 'start'">​
+                    <td ng-bind = "appt.username"></td>​
+                    <td ng-bind = "appt.start"></td>​
+                    <td ng-bind = "appt.end"></td>​
+                    <td ng-bind ="appt.info"></td>​
+                    <td><button ng-click = "dateYes(appt)">Add and Notify</button> | <button ng-click = "dateNo(appt)">Reject and Notify</button></td>
+                </tr>​
+            </tbody>​
+        </table>​
+    <div class = "row">
+        <div class = "cal container">
+            <div id='calendar'></div>
+        </div>
+    </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,60 @@
+<style type="text/css">
+    .splash{
+        background: rgba(255, 215, 0, .8);
+        color: darkslategray;
+    }
+
+    .errz{
+        color: #b22222;
+    }
+   
+</style>	
+
+<div class = "container">
+	<div class = "splash jumbotron">
+		<h1>Mila's Pet Sittin' Shop<br>
+			<small>Log In Below</small></h1>
+
+		<div class = "row">
+		<form name = 'logform' class = "container-fluid" role="form">
+	 		<div class="form-group">
+	    		<label for="username">Username:</label>
+	
+	    		<div>
+	    		<input type="text" class="form-control" name="username	" ng-model = "login.username" required>
+	    		<span ng-show = "logform.username.$dirty && logform.username.$error.required">Username Required</span>
+	    		</div>
+	
+	  		</div>
+	
+	 		<div class="form-group">
+	    		<label for="password">Password:</label>
+	
+	    		<div>
+	    		<input type="password" class="form-control" name="	password" ng-model = "login.password" required>
+	    		<span ng-show = "logform.password.$dirty && logform.password.$error.required">Password Required</span>
+	    		</div>
+	
+	  		</div>
+
+	
+			<input type = "submit" class = "btn btn-success" value = "Log In" ng-disabled = "logform.$invalid" ng-click = "	verify(login)">
+		</form>
+		</div>
+
+		<h5 class = "errz" ng-bind = "error"></h5>
+		
+		<div class = "row">
+			<a href="#/admin" class="btn btn-link" role="button">Admin Login</a>
+	  	<hr>
+		</div>
+
+		
+		<h4>Not registered yet?</h4>
+		<a href="#/register" class="btn btn-link" role="button">Register here!</a>
+			
+		
+	</div>
+
+</div>
+	
