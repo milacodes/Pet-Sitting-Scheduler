@@ -22,7 +22,9 @@ require("./server/config/routes.js")(app);
 
 
 //listen on port 9000
-app.listen(9000, function(){
+
+var port = process.env.PORT || 9000;
+app.listen(port, function(){
 	console.log('*****************');
 	console.log('we hear ya! 9000.');
 	console.log('*****************');

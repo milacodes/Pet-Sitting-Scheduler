@@ -18,13 +18,11 @@ sitapp.config(function($routeProvider) {
 	})
 
 	.when('/calendar', {
-		// controller: 'authController',
 		controller: 'calendarsController',
 		templateUrl: '/partials/calendar.html'
 	})
 
 	.when('/request', {
-		// controller: 'authController',
 		controller: 'datetimesController',
 		templateUrl: '/partials/request.html'
 	})
@@ -39,7 +37,6 @@ sitapp.config(function($routeProvider) {
 	})
 
 	.when('/adview', {
-		// controller: 'authController',
 		controller: 'calendarsController',
 		templateUrl: '/partials/adminview.html'
 	})

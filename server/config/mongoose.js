@@ -2,6 +2,8 @@ var mongoose = require('mongoose');
 
 var fs = require('fs');
 
+// var keys = require(__dirname + 'keys.js');
+
 mongoose.connect('mongodb://localhost/Housesit');
 
 var models_path = __dirname + '/../models';
