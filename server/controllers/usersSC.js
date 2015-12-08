@@ -85,6 +85,19 @@ module.exports = (function(){
 			})
 		},
 
+		logout: function(req,res){
+			console.log('ServCntrl - Users - logout');
+			req.session.destroy(function(err){
+         		if(err){
+         		    console.log(err);
+         		}
+         		else{
+         		    //Session destroyed, redirect to home page.
+         		    res.redirect('/');
+         		}
+         	}
+		},
+
 		authenticate: function(req, res){
 
 			console.log('Authenticate ** ServCntrl');
@@ -171,11 +184,9 @@ module.exports = (function(){
 					res.json({status:true});
 				}
 			});
-		},
-
-		logout: function(req,res){
-			console.log('ServCntrl - Users - logout');
 		}
+
+		
 
 
 		// show: function(req,res){

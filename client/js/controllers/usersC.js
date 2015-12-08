@@ -41,9 +41,10 @@ sitapp.controller('usersController', function($scope, $location, userFactory, ap
 
 		$scope.username = "";
 		$scope.adusername = "";
-		window.location.href = "milaspetsittingshop.herokuapp.com";
-		// console.log($scope.username);
-		// console.log($scope.adusername);
+		$location.path('/');
+
+		// window.location.href = "http://milaspetsittingshop.herokuapp.com/";
+		
 
 	}
 
