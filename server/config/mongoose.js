@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var fs = require('fs');
 
-var keys = require(__dirname + '/key.js');
+var keys = require(__dirname + '/keez.js');
 
 // mongoose.connect('mongodb://localhost/Housesit');
 mongoose.connect(keys.remote_db);

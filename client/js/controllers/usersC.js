@@ -35,12 +35,13 @@ sitapp.controller('usersController', function($scope, $location, userFactory, ap
 	//logout
 	$scope.logout = function(){
 		console.log("logout function");
+		$scope.username = "";
+		$scope.adusername = "";
+		
 		userFactory.logout(function(){
 			console.log("back from logout");
 		})
 
-		$scope.username = "";
-		$scope.adusername = "";
 		$location.path('/');
 
 		// window.location.href = "http://milaspetsittingshop.herokuapp.com/";
