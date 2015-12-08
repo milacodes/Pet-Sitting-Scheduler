@@ -95,7 +95,7 @@ module.exports = (function(){
          		    //Session destroyed, redirect to home page.
          		    res.redirect('/');
          		}
-         	}
+         	})
 		},
 
 		authenticate: function(req, res){
